@@ -105,8 +105,8 @@ export function passesWakeSensitivity(
 ): boolean {
   if (!conf) return false;
   const thresholds = {
-    low: { minAvg: isSingleWord ? 0.88 : 0.85, minWord: 0.70 },
-    medium: { minAvg: isSingleWord ? 0.78 : 0.72, minWord: 0.50 },
+    low: { minAvg: isSingleWord ? 0.88 : 0.85, minWord: 0.7 },
+    medium: { minAvg: isSingleWord ? 0.78 : 0.72, minWord: 0.5 },
     high: { minAvg: isSingleWord ? 0.65 : 0.58, minWord: 0.35 },
   }[sensitivity];
 
@@ -170,13 +170,7 @@ export function isEndPhrase(text: string, customPhrase: string): boolean {
  */
 export function pickWakeGreeting(rawName?: string, randomFn: () => number = Math.random): string {
   const name = rawName?.trim();
-  const options = [
-    'Uhhh?',
-    name ? `Yes, ${name}` : 'Yes?',
-    'Yes?',
-    'Mm-hmm?',
-  ];
+  const options = ['Uhhh?', name ? `Yes, ${name}` : 'Yes?', 'Yes?', 'Mm-hmm?'];
   const index = Math.min(options.length - 1, Math.max(0, Math.floor(randomFn() * options.length)));
   return options[index] ?? 'Yes';
 }
-

@@ -79,12 +79,12 @@ The floating overlay is a separate transparent, click-through window. It has no 
 
 Everything is stored locally.
 
-| What            | Where                                                              |
-| --------------- | ------------------------------------------------------------------ |
+| What            | Where                                                             |
+| --------------- | ----------------------------------------------------------------- |
 | Database        | `buddy.db` in the app data folder (tasks, alarms, settings, keys) |
-| Screenshots     | `screenshots/` in the app data folder                              |
-| Wake-word model | `models/` in the app data folder                                   |
-| Logs            | `logs/main.log`                                                    |
+| Screenshots     | `screenshots/` in the app data folder                             |
+| Wake-word model | `models/` in the app data folder                                  |
+| Logs            | `logs/main.log`                                                   |
 
 App data folder: `%APPDATA%\Jarvis Desk` on Windows, `~/Library/Application Support/Jarvis Desk` on macOS.
 
