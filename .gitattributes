@@ -1,0 +1,6 @@
+# Always use Unix line endings, on every operating system.
+* text=auto eol=lf
+*.png binary
+*.webp binary
+*.ico binary
+*.icns binary
