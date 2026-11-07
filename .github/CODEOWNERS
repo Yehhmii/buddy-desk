@@ -1,0 +1,9 @@
+# Every change needs a review from a code owner. Replace with your GitHub username or a team.
+* @yehhmii
+
+# Security-sensitive areas always need an owner, even if the rules above are relaxed later.
+/src/main/app/security.ts @yehhmii
+/src/main/services/secrets/ @yehhmii
+/src/preload/ @yehhmii
+/config/csp.ts @yehhmii
+/.github/ @yehhmii

@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 300">
+  <defs>
+    <linearGradient id="r-hood" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3d63b0"/><stop offset="1" stop-color="#27427f"/></linearGradient>
+    <radialGradient id="r-skin" cx=".4" cy=".3" r=".85"><stop offset="0" stop-color="#f2c3a0"/><stop offset="1" stop-color="#dd9f78"/></radialGradient>
+    <linearGradient id="r-beard" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6a4632"/><stop offset="1" stop-color="#4a2f20"/></linearGradient>
+  </defs>
+  <ellipse cx="120" cy="292" rx="66" ry="6" fill="#000" opacity=".12"/>
+  <g data-part="figure" data-pivot="120 290">
+    <rect x="86" y="236" width="26" height="42" rx="8" fill="#343a4d"/>
+    <rect x="128" y="236" width="26" height="42" rx="8" fill="#343a4d"/>
+    <path d="M80 280 q0 -10 10 -10 h24 v10 q0 6 -6 6 h-22 q-6 0 -6 -6z" fill="#6b4a2f"/>
+    <path d="M160 280 q0 -10 -10 -10 h-24 v10 q0 6 6 6 h22 q6 0 6 -6z" fill="#6b4a2f"/>
+
+    <g data-part="armL" data-pivot="68 190" data-rest="8">
+      <rect x="52" y="182" width="30" height="56" rx="14" fill="url(#r-hood)"/>
+      <circle cx="67" cy="240" r="14" fill="url(#r-skin)"/>
+    </g>
+
+    <path d="M64 192 Q64 174 92 172 L148 172 Q176 174 176 192 L172 252 Q120 264 68 252 Z" fill="url(#r-hood)"/>
+    <path d="M120 178 L120 256" stroke="#ff8a3d" stroke-width="5" stroke-linecap="round"/>
+    <path d="M104 174 Q120 188 136 174" fill="#2a447f" stroke="#1f3566" stroke-width="2"/>
+    <path d="M86 214 h20 M134 214 h20" stroke="#ff8a3d" stroke-width="4" stroke-linecap="round" opacity=".9"/>
+    <path d="M116 200 l10 -14 -3 11 8 0 -10 14 3 -11 z" fill="#ff8a3d" transform="translate(-20 18) scale(1.500) translate(14 -2)" opacity="0"/>
+
+    <g data-part="armR" data-pivot="172 190" data-rest="-8" data-wave="-146">
+      <rect x="158" y="182" width="30" height="56" rx="14" fill="url(#r-hood)"/>
+      <circle cx="173" cy="240" r="14" fill="url(#r-skin)"/>
+    </g>
+
+    <g data-part="head" data-pivot="120 176">
+      <rect x="52" y="46" width="136" height="128" rx="58" fill="url(#r-skin)"/>
+      <ellipse cx="50" cy="118" rx="9" ry="14" fill="#dd9f78"/>
+      <ellipse cx="190" cy="118" rx="9" ry="14" fill="#dd9f78"/>
+      <path d="M52 100 Q50 40 118 36 Q190 36 188 100 Q176 70 150 66 Q120 54 90 66 Q64 72 52 100 Z" fill="#4a3426"/>
+      <path d="M96 40 Q126 18 168 40 Q140 34 96 40 Z" fill="#4a3426"/>
+      <path d="M52 124 Q54 178 120 180 Q186 178 188 124 Q176 144 160 146 Q144 138 120 140 Q96 138 80 146 Q64 144 52 124 Z" fill="url(#r-beard)"/>
+      <path d="M92 146 Q120 132 148 146 Q138 156 120 154 Q102 156 92 146 Z" fill="#5a3b29"/>
+      <path d="M76 88 Q90 78 108 86" stroke="#3a281d" stroke-width="7" stroke-linecap="round" fill="none"/>
+      <path d="M132 86 Q150 78 164 88" stroke="#3a281d" stroke-width="7" stroke-linecap="round" fill="none"/>
+      <g data-part="eyes" data-pivot="120 108">
+        <ellipse cx="94" cy="108" rx="10" ry="12" fill="#fff"/>
+        <ellipse cx="146" cy="108" rx="10" ry="12" fill="#fff"/>
+        <circle cx="96" cy="110" r="6.500" fill="#2b2118"/><circle cx="144" cy="110" r="6.500" fill="#2b2118"/>
+        <circle cx="98" cy="107" r="2.200" fill="#fff"/><circle cx="146" cy="107" r="2.200" fill="#fff"/>
+      </g>
+      <path d="M114 118 Q120 126 126 118" stroke="#b9774f" stroke-width="3" stroke-linecap="round" fill="none"/>
+      <g data-part="mouth" data-pivot="120 154" data-closed="0.25">
+        <ellipse cx="120" cy="154" rx="11" ry="8" fill="#2b1810"/>
+        <ellipse cx="120" cy="158" rx="6" ry="3.500" fill="#c8504a"/>
+      </g>
+    </g>
+  </g>
+</svg>

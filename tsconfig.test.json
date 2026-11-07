@@ -1,0 +1,6 @@
+{
+  "extends": "./tsconfig.node.json",
+  "compilerOptions": { "lib": ["ES2023", "DOM", "DOM.Iterable"], "types": ["node"] },
+  "exclude": [],
+  "include": ["tests/voiceSession.test.ts", "src/shared/**/*"]
+}

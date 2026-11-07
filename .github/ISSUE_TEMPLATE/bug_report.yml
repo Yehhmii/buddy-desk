@@ -1,0 +1,44 @@
+name: Bug report
+description: Something is broken or behaves unexpectedly
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping. **Never paste API keys.** Logs are scrubbed of common key formats, but check before sharing.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What did you expect, and what did you see instead?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating system
+      options: [Windows 11, Windows 10, macOS (Apple silicon), macOS (Intel), Other]
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Jarvis Desk version
+      description: Settings > General, or the Releases page you downloaded from
+  - type: dropdown
+    id: provider
+    attributes:
+      label: AI provider in use
+      options: [Groq, Gemini, OpenAI, Claude, Not sure]
+  - type: textarea
+    id: logs
+    attributes:
+      label: Log excerpt
+      description: "Windows: %APPDATA%\\Jarvis Desk\\logs\\main.log. macOS: ~/Library/Logs/Jarvis Desk/main.log"
+      render: text

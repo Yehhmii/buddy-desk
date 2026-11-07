@@ -1,0 +1,45 @@
+<!-- Paste this into your website. It shows the right download button for the visitor's computer. -->
+<section id="download" style="font-family: system-ui, sans-serif; text-align: center; padding: 48px 16px">
+  <h2 style="margin: 0 0 8px">Download Jarvis Desk</h2>
+  <p style="margin: 0 0 24px; color: #6e6e73">Free. Bring your own API key (a free one works).</p>
+
+  <a id="primary" href="#" style="
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 999px;
+      background: #0071e3;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+    ">Download</a>
+
+  <p style="margin: 20px 0 0; font-size: 14px; color: #6e6e73">
+    Other downloads:
+    <a href="https://github.com/yehhmii/buddy-desk/releases/latest/download/Jarvis-Desk-Setup.exe">Windows</a>
+    ·
+    <a href="https://github.com/yehhmii/buddy-desk/releases/latest/download/Jarvis-Desk-mac-arm64.dmg">Mac (Apple
+      silicon)</a>
+    ·
+    <a href="https://github.com/yehhmii/buddy-desk/releases/latest/download/Jarvis-Desk-mac-x64.dmg">Mac (Intel)</a>
+  </p>
+</section>
+
+<script>
+  (function () {
+    var base = 'https://github.com/yehhmii/buddy-desk/releases/latest/download/';
+    var ua = navigator.userAgent;
+    var button = document.getElementById('primary');
+    if (/Windows/i.test(ua)) {
+      button.href = base + 'Jarvis-Desk-Setup.exe';
+      button.textContent = 'Download for Windows';
+    } else if (/Mac/i.test(ua)) {
+      // Browsers cannot tell Apple silicon from Intel reliably, so offer Apple silicon here
+      // and keep the Intel link in "Other downloads". Most Macs sold since 2021 are Apple silicon.
+      button.href = base + 'Jarvis-Desk-mac-arm64.dmg';
+      button.textContent = 'Download for Mac';
+    } else {
+      button.href = 'https://github.com/yehhmii/buddy-desk/releases/latest';
+      button.textContent = 'See all downloads';
+    }
+  })();
+</script>
