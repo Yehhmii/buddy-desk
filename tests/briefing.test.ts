@@ -1,8 +1,15 @@
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import type { Task } from '@shared/types';
 import { composeBriefing } from '@main/services/briefing/BriefingService';
 import { buildReportMarkdown, fallbackNarrative } from '@main/services/reports/reportMarkdown';
 import { renderReportHtml } from '@main/services/reports/ReportPdfExporter';
+
+vi.mock('electron', () => ({
+  app: { isPackaged: false, getAppPath: () => '' },
+  BrowserWindow: class {},
+  dialog: {},
+  powerMonitor: { on: () => undefined },
+}));
 
 const task = (id: number, title: string, priority: 0 | 1 = 0): Task => ({
   id,

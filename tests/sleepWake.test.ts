@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import type { Alarm } from '@shared/types';
 import {
   buildRegisterScript,
@@ -6,6 +6,13 @@ import {
   WAKE_TASK_NAME,
 } from '@main/services/alarms/sleepWakeScript';
 import { nextWakeTarget } from '@main/services/alarms/SleepWakeService';
+
+vi.mock('electron', () => ({
+  app: { isPackaged: false, getAppPath: () => '' },
+  BrowserWindow: class {},
+  dialog: {},
+  powerMonitor: { on: () => undefined },
+}));
 
 const alarm = (id: number, nextFireAt: number | null, enabled = true): Alarm => ({
   id,
@@ -21,13 +28,13 @@ const alarm = (id: number, nextFireAt: number | null, enabled = true): Alarm => 
 describe('wake timer script', () => {
   it('asks Windows to wake the PC and escapes quotes in paths', () => {
     const script = buildRegisterScript(
-      "C:\\Users\\O'Neil\\Jarvis Desk.exe",
+      "C:\\Users\\O'Neil\\Buddy Desk.exe",
       '--wake',
       new Date(2026, 10, 5, 6, 29, 15).getTime(),
     );
     expect(script).toContain('-WakeToRun');
     expect(script).toContain("'2026-11-05T06:29:15'");
-    expect(script).toContain("C:\\Users\\O''Neil\\Jarvis Desk.exe");
+    expect(script).toContain("C:\\Users\\O''Neil\\Buddy Desk.exe");
     expect(script).toContain(`'${WAKE_TASK_NAME}'`);
   });
 

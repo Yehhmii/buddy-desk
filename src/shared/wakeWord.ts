@@ -170,7 +170,7 @@ export function isEndPhrase(text: string, customPhrase: string): boolean {
  */
 export function pickWakeGreeting(rawName?: string, randomFn: () => number = Math.random): string {
   const name = rawName?.trim();
-  const options = ['Uhhh?', name ? `Yes, ${name}` : 'Yes?', 'Yes?', 'Mm-hmm?'];
+  const options = ['Uhhh?', name ? `Yes, ${name}?` : 'Yes?', 'Yes?', 'Mm-hmm?'];
   const index = Math.min(options.length - 1, Math.max(0, Math.floor(randomFn() * options.length)));
   return options[index] ?? 'Yes';
 }

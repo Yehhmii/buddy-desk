@@ -32,7 +32,7 @@ describe('wake phrase', () => {
   });
 
   it('builds a grammar with unknown fallback', () => {
-    expect(JSON.parse(buildWakeGrammar('Hey Jarvis'))).toEqual(['hey buddy', '[unk]']);
+    expect(JSON.parse(buildWakeGrammar('Hey Buddy'))).toEqual(['hey buddy', '[unk]']);
   });
 
   it('matches whole words only', () => {
@@ -41,13 +41,13 @@ describe('wake phrase', () => {
   });
 
   it('extracts the command after the last wake phrase', () => {
-    expect(extractCommandAfterWake('Hey Jarvis, add milk to my tasks.', 'hey buddy')).toBe(
+    expect(extractCommandAfterWake('Hey Buddy, add milk to my tasks.', 'hey buddy')).toBe(
       'add milk to my tasks.',
     );
     expect(extractCommandAfterWake('blah blah hey buddy hey buddy what is pending', 'hey buddy')).toBe(
       'what is pending',
     );
-    expect(extractCommandAfterWake('Hey Jarvis', 'hey buddy')).toBe('');
+    expect(extractCommandAfterWake('Hey Buddy', 'hey buddy')).toBe('');
     expect(extractCommandAfterWake('add milk', 'hey buddy')).toBe('add milk');
   });
 
@@ -79,11 +79,12 @@ describe('wake phrase', () => {
   });
 
   it('randomly picks among opening wake statements', () => {
-    expect(pickWakeGreeting('Francisco', () => 0.1)).toBe('Uhhh');
-    expect(pickWakeGreeting('Francisco', () => 0.4)).toBe('Yes, Francisco');
-    expect(pickWakeGreeting('Francisco', () => 0.8)).toBe('Yes');
-    expect(pickWakeGreeting('', () => 0.4)).toBe('Yes');
-    expect(pickWakeGreeting(undefined, () => 0.4)).toBe('Yes');
+    expect(pickWakeGreeting('Francisco', () => 0.1)).toBe('Uhhh?');
+    expect(pickWakeGreeting('Francisco', () => 0.4)).toBe('Yes, Francisco?');
+    expect(pickWakeGreeting('Francisco', () => 0.5)).toBe('Yes?');
+    expect(pickWakeGreeting('Francisco', () => 0.8)).toBe('Mm-hmm?');
+    expect(pickWakeGreeting('', () => 0.4)).toBe('Yes?');
+    expect(pickWakeGreeting(undefined, () => 0.4)).toBe('Yes?');
   });
 });
 

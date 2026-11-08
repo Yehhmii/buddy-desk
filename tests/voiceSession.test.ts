@@ -148,14 +148,14 @@ describe('conversation loop', () => {
     expect(t.recordCalls[0]?.prerollSeconds).toBe(4);
     expect(t.recordCalls[1]?.prerollSeconds).toBe(0);
     expect(t.run).toHaveBeenCalledWith('add milk');
-    expect(['Uhhh', 'Yes, Alex', 'Yes']).toContain(t.said[0]);
+    expect(['Uhhh?', 'Yes, Alex?', 'Yes?', 'Mm-hmm?']).toContain(t.said[0]);
     expect(t.said[1]).toBe('Added.');
   });
 
   it('strips the wake phrase from a one-breath command', async () => {
     const t = setup({
       recordings: [speech(3000), silence],
-      transcripts: ['Hey Jarvis, add milk to my tasks'],
+      transcripts: ['Hey Buddy, add milk to my tasks'],
       replies: ['Added.'],
     });
     t.session.trigger('wake');
@@ -187,7 +187,7 @@ describe('conversation loop', () => {
 });
 
 describe('echo guard', () => {
-  it('ignores a follow-up that is just Jarvis being heard by the mic', async () => {
+  it('ignores a follow-up that is just Buddy being heard by the mic', async () => {
     const t = setup({
       recordings: [speech(), speech(), silence, silence],
       transcripts: ['add buy milk', 'Added buy milk to your tasks'],

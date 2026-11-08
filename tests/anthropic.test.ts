@@ -3,7 +3,7 @@ import { AnthropicProvider, toAnthropicMessages } from '@main/services/ai/Anthro
 import type { ChatMessage } from '@main/services/ai/types';
 
 const conversation: ChatMessage[] = [
-  { role: 'system', content: 'You are Jarvis.' },
+  { role: 'system', content: 'You are Buddy.' },
   { role: 'user', content: 'add milk' },
   {
     role: 'assistant',
@@ -20,7 +20,7 @@ const conversation: ChatMessage[] = [
 describe('Claude message conversion', () => {
   it('moves the system prompt out and keeps turns alternating', () => {
     const { system, messages } = toAnthropicMessages(conversation);
-    expect(system).toBe('You are Jarvis.');
+    expect(system).toBe('You are Buddy.');
     expect(messages.map((m) => m.role)).toEqual(['user', 'assistant', 'user']);
   });
 
@@ -99,7 +99,7 @@ describe('Claude provider', () => {
     expect(seen?.headers['x-api-key']).toBe('sk-ant-test');
     expect(seen?.headers['anthropic-version']).toBe('2023-06-01');
     expect(seen?.body['model']).toBe('claude-haiku-5-5');
-    expect(seen?.body['system']).toBe('You are Jarvis.');
+    expect(seen?.body['system']).toBe('You are Buddy.');
     expect(res.content).toBe('Adding it.');
     expect(res.toolCalls[0]).toMatchObject({
       id: 'toolu_1',
