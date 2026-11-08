@@ -23,6 +23,7 @@ jobs:
         os: [ubuntu-latest, windows-latest, macos-latest]
     env:
       ELECTRON_SKIP_BINARY_DOWNLOAD: '1'
+      ELECTRON_OVERRIDE_DIST_PATH: '.'
     steps:
       - run: git config --global core.autocrlf false
       - uses: actions/checkout@v4

@@ -1,10 +1,11 @@
 import { app } from 'electron';
-import type { Alarm } from '@shared/types';
 import { logger } from '../../core/logger';
 import type { SettingsService } from '../settings/SettingsService';
 import type { AlarmService } from './AlarmService';
 import { runPowerShell, type ScriptRunner } from './powershell';
-import { buildRegisterScript, buildUnregisterScript } from './sleepWakeScript';
+import { buildRegisterScript, buildUnregisterScript, nextWakeTarget } from './sleepWakeScript';
+
+export { nextWakeTarget } from './sleepWakeScript';
 
 /** The PC wakes this long before the alarm so the app has time to start. */
 const LEAD_MS = 45_000;
@@ -13,13 +14,6 @@ export interface SleepWakeStatus {
   supported: boolean;
   scheduledFor: number | null;
   error: string | null;
-}
-
-export function nextWakeTarget(alarms: Alarm[], now: number): number | null {
-  const times = alarms
-    .filter((a) => a.enabled && a.nextFireAt !== null && a.nextFireAt > now)
-    .map((a) => a.nextFireAt as number);
-  return times.length > 0 ? Math.min(...times) : null;
 }
 
 /**

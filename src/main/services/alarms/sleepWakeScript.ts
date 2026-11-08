@@ -1,6 +1,15 @@
+import type { Alarm } from '@shared/types';
+
 /** Builds the PowerShell that manages the single Windows wake timer. Pure, so it can be tested anywhere. */
 
 export const WAKE_TASK_NAME = 'JarvisDeskAlarmWake';
+
+export function nextWakeTarget(alarms: Alarm[], now: number): number | null {
+  const times = alarms
+    .filter((a) => a.enabled && a.nextFireAt !== null && a.nextFireAt > now)
+    .map((a) => a.nextFireAt as number);
+  return times.length > 0 ? Math.min(...times) : null;
+}
 
 const quote = (value: string): string => `'${value.replace(/'/g, "''")}'`;
 

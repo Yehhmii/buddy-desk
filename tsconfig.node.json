@@ -14,8 +14,11 @@
     "isolatedModules": true,
     "skipLibCheck": true,
     "noEmit": true,
-    "baseUrl": ".",
-    "paths": { "@shared/*": ["src/shared/*"], "@main/*": ["src/main/*"], "@/*": ["src/renderer/src/*"] }
+    "paths": {
+      "@shared/*": ["./src/shared/*"],
+      "@main/*": ["./src/main/*"],
+      "@/*": ["./src/renderer/src/*"]
+    }
   },
   "exclude": ["tests/voiceSession.test.ts"],
   "include": [
@@ -25,6 +28,6 @@
     "tests/**/*",
     "electron.vite.config.ts",
     "config/**/*",
-    "vitest.config.ts"
+    "vitest.config.mts"
   ]
 }

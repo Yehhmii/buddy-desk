@@ -3,9 +3,13 @@ import type { Alarm } from '@shared/types';
 import {
   buildRegisterScript,
   buildUnregisterScript,
+  nextWakeTarget,
   WAKE_TASK_NAME,
 } from '@main/services/alarms/sleepWakeScript';
-import { nextWakeTarget } from '@main/services/alarms/SleepWakeService';
+
+vi.mock('@main/core/logger', () => ({
+  logger: { warn: vi.fn(), info: vi.fn(), error: vi.fn(), debug: vi.fn() },
+}));
 
 vi.mock('electron', () => ({
   app: { isPackaged: false, getAppPath: () => '' },
