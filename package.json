@@ -7,9 +7,9 @@
   "main": "./out/main/index.js",
   "author": "Jarvis Desk contributors",
   "scripts": {
-    "dev": "electron-vite dev",
-    "build": "npm run typecheck && electron-vite build",
-    "start": "electron-vite preview",
+    "dev": "node init && electron-vite dev",
+    "build": "node init && npm run typecheck && electron-vite build",
+    "start": "node init && electron-vite preview",
     "typecheck": "tsc --noEmit -p tsconfig.node.json && tsc --noEmit -p tsconfig.web.json && tsc --noEmit -p tsconfig.test.json",
     "test": "vitest run",
     "dist": "npm run build && electron-builder --publish never",
