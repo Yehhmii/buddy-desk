@@ -29,7 +29,18 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
-      - run: npx electron-builder ${{ matrix.flag }} --publish always
+      - name: Build and publish
+        shell: bash
+        run: |
+          if [ -z "$CSC_LINK" ]; then
+            unset CSC_LINK
+            unset CSC_KEY_PASSWORD
+            export CSC_IDENTITY_AUTO_DISCOVERY=false
+          fi
+          if [ -z "$APPLE_ID" ]; then unset APPLE_ID; fi
+          if [ -z "$APPLE_APP_SPECIFIC_PASSWORD" ]; then unset APPLE_APP_SPECIFIC_PASSWORD; fi
+          if [ -z "$APPLE_TEAM_ID" ]; then unset APPLE_TEAM_ID; fi
+          npx electron-builder ${{ matrix.flag }} --publish always
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # Optional code signing. Without these the installers still build, but Windows

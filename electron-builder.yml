@@ -2,8 +2,9 @@
 # File names are fixed (no version number) so a website can link to
 #   https://github.com/OWNER/REPO/releases/latest/download/Jarvis-Desk-Setup.exe
 appId: com.buddydesk.app
-productName: Jarvis Desk
-copyright: Copyright © Jarvis Desk contributors
+productName: Buddy Desk
+npmRebuild: false
+copyright: Copyright © Buddy Desk contributors
 directories:
   buildResources: build
   output: dist
@@ -34,7 +35,7 @@ win:
     - target: nsis
       arch: [x64]
   icon: resources/icon.png
-  artifactName: Jarvis-Desk-Setup.${ext}
+  artifactName: Buddy-Desk-Setup.${ext}
 nsis:
   oneClick: false
   allowToChangeInstallationDirectory: true
@@ -49,12 +50,12 @@ mac:
       arch: [arm64, x64]
   icon: resources/icon.png
   category: public.app-category.productivity
-  artifactName: Jarvis-Desk-mac-${arch}.${ext}
+  artifactName: Buddy-Desk-mac-${arch}.${ext}
   hardenedRuntime: true
   gatekeeperAssess: false
   entitlements: build/entitlements.mac.plist
   entitlementsInherit: build/entitlements.mac.plist
   extendInfo:
-    NSMicrophoneUsageDescription: Jarvis Desk listens through the microphone for your voice commands and wake word.
+    NSMicrophoneUsageDescription: Buddy Desk listens through the microphone for your voice commands and wake word.
 dmg:
-  title: Jarvis Desk
+  title: Buddy Desk

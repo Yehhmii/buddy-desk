@@ -1,11 +1,11 @@
 {
   "name": "buddy-desk",
-  "productName": "Jarvis Desk",
+  "productName": "Buddy Desk",
   "version": "0.1.0",
   "description": "A voice-first desktop assistant: tasks, alarms, screenshots and a daily report, run by talking.",
   "private": true,
   "main": "./out/main/index.js",
-  "author": "Jarvis Desk contributors",
+  "author": "Buddy Desk contributors",
   "scripts": {
     "dev": "electron-vite dev",
     "build": "npm run typecheck && electron-vite build",

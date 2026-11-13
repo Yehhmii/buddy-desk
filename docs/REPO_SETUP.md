@@ -81,3 +81,27 @@ This stops a stranger's pull request from running workflows (and using your runn
 - Be wary of new dependencies, install scripts, and network calls to unfamiliar hosts.
 - Never run a contributor's branch with your real API keys. Use a throwaway key.
 - Merge with **Squash and merge** and edit the message so history stays readable.
+
+Making a release
+Set the version. In package.json, change "version" (for example to 0.1.0) and add a line to CHANGELOG.md.
+Merge that through a pull request, like any change. Your protected main requires it.
+Pull the latest and tag it in a terminal in the project folder:
+bash
+git checkout main
+git pull
+git tag v0.1.0
+git push origin v0.1.0
+
+The tag must start with v and match the version.
+4. Wait. Open the Actions tab and watch Release. Building the Windows and Mac installers takes roughly 10 to 15 minutes.
+5. Publish the draft. Go to the Releases page. You’ll see a draft release with the installers attached. Check that the files look right, edit the release notes, and click Publish release.
+
+Users can now download from github.com/Yehhmii/buddy-desk/releases/latest.
+
+Common problems
+The release has no files, or one platform is missing: open the failed job in Actions, find the red step, and paste me the last lines.
+Tag already used or wrong: delete it with git tag -d v0.1.0 and git push origin :refs/tags/v0.1.0. Your tag-protection rule may block that, so as admin you may need to remove the rule temporarily.
+Mac builds fail or can’t be opened: unsigned Mac apps need a right-click and Open, and automatic updates only work once you add Apple signing keys (docs/RELEASING.md).
+Updates for people who already installed
+
+After the first release, installed copies check for new versions every few hours. For each later release, bump the version and push a new tag (v0.1.1, then v0.2.0, and so on). Users get it automatically, once they quit and reopen the app.
