@@ -1,7 +1,7 @@
 {
   "name": "buddy-desk",
   "productName": "Buddy Desk",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A voice-first desktop assistant: tasks, alarms, screenshots and a daily report, run by talking.",
   "private": true,
   "main": "./out/main/index.js",
