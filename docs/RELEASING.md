@@ -23,16 +23,16 @@ Installed copies check for updates every few hours and install the new version w
 
 | File                        | For                        |
 | --------------------------- | -------------------------- |
-| `Jarvis-Desk-Setup.exe`     | Windows 10 and 11 (64-bit) |
-| `Jarvis-Desk-mac-arm64.dmg` | Macs with Apple silicon    |
-| `Jarvis-Desk-mac-x64.dmg`   | Intel Macs                 |
+| `Buddy-Desk-Setup.exe`     | Windows 10 and 11 (64-bit) |
+| `Buddy-Desk-mac-arm64.dmg` | Macs with Apple silicon    |
+| `Buddy-Desk-mac-x64.dmg`   | Intel Macs                 |
 
 The names are fixed on purpose, so these links always point at the newest release:
 
 ```
-https://github.com/yehhmii/buddy-desk/releases/latest/download/Jarvis-Desk-Setup.exe
-https://github.com/yehhmii/buddy-desk/releases/latest/download/Jarvis-Desk-mac-arm64.dmg
-https://github.com/yehhmii/buddy-desk/releases/latest/download/Jarvis-Desk-mac-x64.dmg
+https://github.com/yehhmii/buddy-desk/releases/latest/download/Buddy-Desk-Setup.exe
+https://github.com/yehhmii/buddy-desk/releases/latest/download/Buddy-Desk-mac-arm64.dmg
+https://github.com/yehhmii/buddy-desk/releases/latest/download/Buddy-Desk-mac-x64.dmg
 ```
 
 A ready-made download section for your website is in [website-download.html](website-download.html).

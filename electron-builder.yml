@@ -1,6 +1,6 @@
 # Installers for Windows and macOS. Run `npm run dist:win` or `npm run dist:mac`.
 # File names are fixed (no version number) so a website can link to
-#   https://github.com/OWNER/REPO/releases/latest/download/Jarvis-Desk-Setup.exe
+#   https://github.com/OWNER/REPO/releases/latest/download/buddy-Desk-Setup.exe
 appId: com.buddydesk.app
 productName: Buddy Desk
 npmRebuild: false

@@ -20,13 +20,13 @@
 
   <p style="margin: 20px 0 0; font-size: 14px; color: #6e6e73">
     Other downloads:
-    <a href="https://github.com/yehhmii/buddy-desk/releases/latest/download/Jarvis-Desk-Setup.exe">Windows</a>
+    <a href="https://github.com/yehhmii/buddy-desk/releases/latest/download/Buddy-Desk-Setup.exe">Windows</a>
     ·
-    <a href="https://github.com/yehhmii/buddy-desk/releases/latest/download/Jarvis-Desk-mac-arm64.dmg"
+    <a href="https://github.com/yehhmii/buddy-desk/releases/latest/download/Buddy-Desk-mac-arm64.dmg"
       >Mac (Apple silicon)</a
     >
     ·
-    <a href="https://github.com/yehhmii/buddy-desk/releases/latest/download/Jarvis-Desk-mac-x64.dmg"
+    <a href="https://github.com/yehhmii/buddy-desk/releases/latest/download/Buddy-Desk-mac-x64.dmg"
       >Mac (Intel)</a
     >
   </p>
@@ -38,12 +38,12 @@
     var ua = navigator.userAgent;
     var button = document.getElementById('primary');
     if (/Windows/i.test(ua)) {
-      button.href = base + 'Jarvis-Desk-Setup.exe';
+      button.href = base + 'Buddy-Desk-Setup.exe';
       button.textContent = 'Download for Windows';
     } else if (/Mac/i.test(ua)) {
       // Browsers cannot tell Apple silicon from Intel reliably, so offer Apple silicon here
       // and keep the Intel link in "Other downloads". Most Macs sold since 2021 are Apple silicon.
-      button.href = base + 'Jarvis-Desk-mac-arm64.dmg';
+      button.href = base + 'Buddy-Desk-mac-arm64.dmg';
       button.textContent = 'Download for Mac';
     } else {
       button.href = 'https://github.com/yehhmii/buddy-desk/releases/latest';

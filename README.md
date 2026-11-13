@@ -48,9 +48,9 @@ It is private by design. Your tasks, screenshots and settings stay on your compu
 ## Install (no technical knowledge needed)
 
 1. Go to the **[Releases page](https://github.com/yehhmii/buddy-desk/releases/latest)** and download the file for your computer:
-   - **Windows 10/11:** `Jarvis-Desk-Setup.exe`
-   - **Mac with Apple silicon (M1 or newer):** `Jarvis-Desk-mac-arm64.dmg`
-   - **Mac with an Intel chip:** `Jarvis-Desk-mac-x64.dmg`
+   - **Windows 10/11:** `Buddy-Desk-Setup.exe`
+   - **Mac with Apple silicon (M1 or newer):** `Buddy-Desk-mac-arm64.dmg`
+   - **Mac with an Intel chip:** `Buddy-Desk-mac-x64.dmg`
 2. Open it and follow the installer. On a Mac, drag Jarvis Desk into Applications.
 3. Start Jarvis Desk. A short guide walks you through the rest.
 
